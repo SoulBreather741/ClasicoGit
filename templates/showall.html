@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Usersdata</title>
+	<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+</head>
+<body>
+    <form name="delete" action="/showall" method="post">
+        <input type="text" id="code" name="code" placeholder="Your code..">
+        <input type="Submit" class="mu-book-now-btn" value="delete">
+    </form>
+<table>
+<tr>
+    <th>Name</th>
+    <th></th>
+    <th>Code</th>
+    <th></th>    
+    <th>PhoneNumber</th>
+    <th></th>
+    <th>FirstHalf</th>
+    <th></th>
+    <th>FecondHalf</th>
+    <th></th>
+    <th>Final</th>
+    <th>corner</th>
+ </tr>
+{% for user in users %}
+<tr>
+    <td>{{user.name}}<td>
+    <td>{{user.code}}<td>
+    <td>{{user.phonenumber}}<td>
+    <td>{{user.firsthalfB}} - {{user.firsthalfR}}<td> 
+    <td>{{user.secondhalfB}}  - {{user.secondhalfR}}<td>
+    <td>{{user.firsthalfB}} - {{user.firsthalfR}}</td>
+    <td>{{user.corner}}<td>
+    
+
+
+
+
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>
